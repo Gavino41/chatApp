@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import firebase from '../backend/firebase'
-import auth from '../backend/firebase';
+import {useAuthState} from 'node_modules/react-firebase-hooks/auth'
+import loginStack from './src/components/loginStack'
+import homeStack from './src/components/homeStack';
+
 
 export default function App() {
     
 
-  
+  const [user] = useAuthState(auth);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      {user ? <homeStack /> : <loginStack />}
       <StatusBar style="auto" />
     </View>
   );
