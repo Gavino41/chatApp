@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import {useAuthState} from 'node_modules/react-firebase-hooks/auth'
-import loginStack from './src/components/loginStack'
+import {useAuthState} from 'react-firebase-hooks/auth';
+import { auth } from './backend/firebase';
+import loginStack from './src/components/loginStack';
 import homeStack from './src/components/homeStack';
 
 
